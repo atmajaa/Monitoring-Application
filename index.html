@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .metrics {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .metric {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>System Monitor</h1>
+    <div class="metrics">
+        <div class="metric">CPU Usage: {{ cpu_metric }}%</div>
+        <div class="metric">Memory Usage: {{ mem_metric }}%</div>
+        {% if message %}
+        <div class="warning">{{ message }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
